@@ -1,197 +1,277 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>LogoCraft Studio</title>
-<style>
-*{box-sizing:border-box}
-body{margin:0;background:#090909;color:#fff;font:16px/1.6 Arial,sans-serif}
-header,footer{padding:22px 6%;border-bottom:1px solid #8e7134}
-.gold{color:#dfbd68}
-nav a{color:#dfbd68;margin:0 8px}
-section{padding:55px 7%;max-width:1150px;margin:auto}
-.hero{text-align:center;background:radial-gradient(ellipse,#342612,#090909 70%);padding-top:75px;padding-bottom:75px}
-h1{font:normal clamp(38px,7vw,66px) Georgia,serif}
-h2{font:normal 32px Georgia,serif}
-p{color:#c8c3b9}
-.btn{display:inline-block;padding:13px 20px;margin:8px;background:#dfbd68;color:#111;text-decoration:none;border:0;border-radius:4px;cursor:pointer;font-weight:bold}
-.outline{background:transparent;border:1px solid #dfbd68;color:#dfbd68}
-.offer{display:inline-block;border:1px solid #dfbd68;padding:8px 14px;color:#f4d985;border-radius:20px}
-.portfolio{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
-.tile{background:#121212;border:1px solid #8e7134;text-align:center;padding:25px 8px}
-.tile strong{font:32px Georgia,serif;color:#dfbd68}
-form{background:#121212;border:1px solid #8e7134;padding:22px;border-radius:7px}
-.fields{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.field{display:flex;flex-direction:column;gap:6px}
-.full{grid-column:1/-1}
-input,select,textarea{width:100%;padding:12px;background:#090909;color:white;border:1px solid #665632;border-radius:4px}
-textarea{min-height:120px}
-label{font-size:13px}
-.check{display:flex;align-items:flex-start;gap:9px}
-.check input{width:auto}
-form button{width:100%;margin-top:18px}
-.hint{font-size:12px;color:#b8b1a2}
-.notice{display:none;background:#1b1609;border:1px solid #dfbd68;padding:16px;margin-top:18px}
-.notice.show{display:block}
-pre{white-space:pre-wrap;overflow-wrap:anywhere}
-a{color:#dfbd68}
-@media(max-width:600px){.fields{grid-template-columns:1fr}.full{grid-column:auto}nav{line-height:2}}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="LogoCraft Studio creates thoughtful, modern logos for brands and businesses.">
+  <title>LogoCraft Studio | Brand Identity</title>
+  <style>
+    :root {
+      --cream: #f7f4ed;
+      --navy: #172b46;
+      --muted: #687386;
+      --line: #dedbd2;
+      --white: #fffefa;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--cream);
+      color: var(--navy);
+      font-family: Arial, Helvetica, sans-serif;
+      line-height: 1.6;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 24px 7%;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .brand {
+      font-size: 19px;
+      font-weight: 800;
+      letter-spacing: -0.6px;
+    }
+
+    nav a {
+      color: var(--navy);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    main {
+      width: min(1050px, 86%);
+      margin: auto;
+    }
+
+    .hero {
+      padding: 95px 0 85px;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      font-size: 12px;
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(45px, 8vw, 82px);
+      line-height: 1.04;
+      letter-spacing: -2px;
+      margin: 22px 0;
+      font-weight: 500;
+    }
+
+    .hero p {
+      max-width: 530px;
+      color: var(--muted);
+      font-size: 18px;
+    }
+
+    .button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 24px;
+      background: var(--navy);
+      color: white;
+      text-decoration: none;
+      border: 0;
+      border-radius: 3px;
+      font-weight: 700;
+      cursor: pointer;
+      font-size: 15px;
+    }
+
+    .section {
+      padding: 55px 0;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 36px;
+      font-weight: 500;
+      margin: 0 0 15px;
+    }
+
+    .intro {
+      color: var(--muted);
+      max-width: 570px;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+      margin-top: 30px;
+    }
+
+    .service {
+      padding: 24px;
+      border: 1px solid var(--line);
+      background: var(--white);
+    }
+
+    .service h3 { margin-top: 0; }
+
+    .service p {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    form {
+      max-width: 650px;
+      margin-top: 30px;
+    }
+
+    label {
+      display: block;
+      margin: 17px 0 7px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 13px;
+      border: 1px solid var(--line);
+      border-radius: 3px;
+      background: var(--white);
+      color: var(--navy);
+      font: inherit;
+    }
+
+    textarea {
+      min-height: 125px;
+      resize: vertical;
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: 2px solid #9aa9bc;
+      outline-offset: 1px;
+    }
+
+    .note {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    footer {
+      margin-top: 50px;
+      padding: 25px 7%;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 13px;
+      text-align: center;
+    }
+
+    @media (max-width: 600px) {
+      header { padding: 20px 7%; }
+      .hero { padding: 65px 0; }
+      h1 { letter-spacing: -1px; }
+    }
+  </style>
 </head>
 <body>
-<header>
-<div class="gold">♕ LOGOCRAFT STUDIO</div>
-<small class="gold">LOGOS THAT TELL YOUR STORY</small>
-<nav>
-<a href="#portfolio">Portfolio</a>
-<a href="#order">Order a Logo</a>
-<a href="#about">About</a>
-</nav>
-</header>
+  <header>
+    <div class="brand">LogoCraft Studio.</div>
+    <nav><a href="#order">Order a logo ↗</a></nav>
+  </header>
 
-<main>
-<section class="hero">
-<div class="gold">PROFESSIONAL LOGO DESIGN</div>
-<h1>Your Brand.<br><span class="gold">Our Creativity.</span></h1>
-<p>Distinctive logo concepts for businesses, creators, and ambitious new brands.</p>
-<p>Tell us your idea and we will review your request.</p>
-<p><span class="offer">INTRODUCTORY OFFER · LOGO DESIGN FREE</span></p>
-<a class="btn" href="#order">Request a Free Logo →</a>
-<a class="btn outline" href="#portfolio">View Portfolio</a>
-<div style="margin-top:45px">
-<div class="gold" style="font-size:70px">♕</div>
-<div class="gold" style="font:36px Georgia">LOGOCRAFT</div>
-<div class="gold" style="letter-spacing:8px">STUDIO</div>
-</div>
-</section>
+  <main>
+    <section class="hero">
+      <div class="eyebrow">Design · Identity · Creativity</div>
+      <h1>Make your brand<br>mean something.</h1>
+      <p>
+        Thoughtful logo design for businesses, creators, and new ideas.
+        Simple, distinctive, and made to help your brand stand out.
+      </p>
+      <a class="button" href="#order">Start your project ↗</a>
+    </section>
 
-<section id="portfolio">
-<div class="gold">OUR PORTFOLIO</div>
-<h2>Featured Concepts</h2>
-<p>Concept directions showing the visual identities we can explore.</p>
-<div class="portfolio">
-<div class="tile"><strong>♕</strong><h3>KING ISHKHAN</h3><small>PERSONAL BRAND</small></div>
-<div class="tile"><strong>KFC</strong><h3>REDESIGN CONCEPT</h3><small>UNOFFICIAL STUDY</small></div>
-<div class="tile"><strong>▲</strong><h3>EVEREST</h3><small>ADVENTURE BRAND</small></div>
-<div class="tile"><strong>∞</strong><h3>NEXORA</h3><small>TECH CONCEPT</small></div>
-</div>
-<p class="hint">These are concept samples. The KFC concept is unofficial and is not affiliated with KFC.</p>
-</section>
+    <section class="section" id="services">
+      <div class="eyebrow">What we do</div>
+      <h2>Design with purpose.</h2>
+      <p class="intro">
+        Every brand has a story. We help you express yours through a
+        clear visual identity.
+      </p>
 
-<section id="order">
-<div class="gold">START YOUR PROJECT</div>
-<h2>Let's Create Something Great.</h2>
-<p>Complete the form to prepare a message that you can send to Instagram.</p>
-<p class="offer">100% FREE LOGO DESIGN · NO PAYMENT</p>
-<p class="hint">Submitting this form does not automatically send your information or confirm an order.</p>
+      <div class="services">
+        <article class="service">
+          <h3>Logo Design</h3>
+          <p>A distinctive logo designed around your brand and its ideas.</p>
+        </article>
+        <article class="service">
+          <h3>Brand Identity</h3>
+          <p>A consistent visual direction for your business or project.</p>
+        </article>
+        <article class="service">
+          <h3>Creative Design</h3>
+          <p>Visual concepts for creators, small businesses, and new brands.</p>
+        </article>
+      </div>
+    </section>
 
-<form id="requestForm">
-<div class="fields">
-<div class="field"><label for="first">First name *</label><input id="first" required maxlength="80"></div>
-<div class="field"><label for="last">Last name *</label><input id="last" required maxlength="80"></div>
-<div class="field"><label for="insta">Instagram username *</label><input id="insta" required placeholder="@yourusername"></div>
-<div class="field"><label for="language">Preferred language *</label>
-<select id="language" required>
-<option value="">Choose language</option><option>English</option><option>Armenian</option><option>Russian</option><option>French</option><option>Spanish</option><option>German</option><option>Other</option>
-</select></div>
-<div class="field"><label for="brand">Brand / project name *</label><input id="brand" required maxlength="120"></div>
-<div class="field"><label for="industry">Industry / project type *</label>
-<select id="industry" required>
-<option value="">Select one</option><option>Fashion / Clothing</option><option>Food / Cafe / Restaurant</option><option>Beauty / Skincare</option><option>Technology</option><option>Personal brand / Creator</option><option>Sports / Fitness</option><option>Travel / Adventure</option><option>Other</option>
-</select></div>
-<div class="field"><label for="type">Logo type *</label>
-<select id="type" required>
-<option value="">Select a logo type</option><option>Wordmark (text only)</option><option>Symbol / Icon</option><option>Combination mark (text + symbol)</option><option>Monogram / Initials</option><option>Emblem / Badge</option><option>Not sure — recommend one</option>
-</select></div>
-<div class="field"><label for="style">Preferred style *</label>
-<select id="style" required>
-<option value="">Choose a style</option><option>Minimalist</option><option>Luxury / Premium</option><option>Modern</option><option>Elegant</option><option>Bold</option><option>Playful</option><option>Vintage / Retro</option><option>Sporty</option><option>Other / Please advise</option>
-</select></div>
-<div class="field full"><label for="colors">Preferred colours</label><input id="colors" placeholder="e.g. black and gold, blue and white"></div>
-<div class="field full"><label for="desc">Describe the logo you want *</label><textarea id="desc" required maxlength="1500" placeholder="Describe your brand and the logo you imagine..."></textarea></div>
-<div class="field full"><label for="files">Reference images (optional)</label><input id="files" type="file" accept="image/*" multiple><span class="hint">Attach actual reference images separately in Instagram DM.</span></div>
-<div class="field full"><label class="check"><input type="checkbox" id="agree" required><span>I understand this is a request, not a confirmed order.</span></label></div>
-</div>
-<button class="btn" type="submit">Prepare Instagram Request ↗</button>
-</form>
+    <section class="section" id="order">
+      <div class="eyebrow">Let's work together</div>
+      <h2>Tell us about your project.</h2>
+      <p class="intro">
+        Fill in the form below. Your request will be sent to our email.
+      </p>
 
-<div class="notice" id="result">
-<strong class="gold">Your request message is ready.</strong>
-<p>Copy the message below and send it to @logocraftstudio2027 on Instagram.</p>
-<pre id="message"></pre>
-<button class="btn" type="button" id="copy">Copy Request Message</button>
-<p><a class="btn outline" href="https://www.instagram.com/logocraftstudio2027/" target="_blank" rel="noopener">Open Instagram ↗</a></p>
-<p id="status" class="hint"></p>
-</div>
-</section>
+      <form action="https://formsubmit.co/logocraftstudio20272028@gmail.com"
+            method="POST">
+        <input type="hidden" name="_subject" value="New LogoCraft Studio Order">
+        <input type="hidden" name="_template" value="table">
+        <input type="text" name="_honey" style="display:none">
 
-<section id="about">
-<div class="gold">ABOUT US</div>
-<h2>A Thoughtful Start for Your Brand.</h2>
-<p>LogoCraft Studio is an independent creative project focused on distinctive logo concepts and clear communication.</p>
-<p>Every request is reviewed before work is agreed.</p>
-<p class="gold" style="font:italic 24px Georgia">Ishkhan Ishkhan Stepanyan</p>
-<p>Founder &amp; Owner · LogoCraft Studio</p>
-</section>
-</main>
+        <label for="name">Your name *</label>
+        <input id="name" name="Customer name" type="text"
+               placeholder="Enter your name" required>
 
-<footer>
-<div class="gold">♕ LOGOCRAFT STUDIO</div>
-<p>Distinctive logo concepts for ambitious brands.</p>
-<p>Instagram: <a href="https://www.instagram.com/logocraftstudio2027/" target="_blank" rel="noopener">@logocraftstudio2027</a></p>
-<p>Founder: Ishkhan Ishkhan Stepanyan</p>
-<small>© 2026 LogoCraft Studio · All rights reserved.</small>
-</footer>
+        <label for="email">Your email *</label>
+        <input id="email" name="Customer email" type="email"
+               placeholder="you@example.com" required>
 
-<script>
-const form=document.getElementById('requestForm');
-const result=document.getElementById('result');
-const msg=document.getElementById('message');
-form.addEventListener('submit',function(e){
-e.preventDefault();
-if(!form.reportValidity())return;
-const first=document.getElementById('first').value;
-const last=document.getElementById('last').value;
-const insta=document.getElementById('insta').value;
-const language=document.getElementById('language').value;
-const brand=document.getElementById('brand').value;
-const industry=document.getElementById('industry').value;
-const type=document.getElementById('type').value;
-const style=document.getElementById('style').value;
-const colors=document.getElementById('colors').value||'Not specified';
-const desc=document.getElementById('desc').value;
-const files=Array.from(document.getElementById('files').files).map(f=>f.name);
-msg.textContent=[
-'LOGOCRAFT STUDIO — LOGO DESIGN REQUEST',
-'This is a request for review, not a confirmed order.',
-'Logo design is FREE during the introductory offer. No payment is required.',
-'',
-'Name: '+first+' '+last,
-'Instagram: '+insta,
-'Preferred language: '+language,
-'Brand / project: '+brand,
-'Industry: '+industry,
-'Logo type: '+type,
-'Preferred style: '+style,
-'Preferred colours: '+colors,
-'Description: '+desc,
-'Reference files selected: '+(files.length?files.join(', '):'None'),
-'',
-'Please let me know if you can take this request and what the next steps are.'
-].join('\n');
-result.classList.add('show');
-result.scrollIntoView({behavior:'smooth',block:'nearest'});
-});
-document.getElementById('copy').addEventListener('click',async function(){
-try{
-await navigator.clipboard.writeText(msg.textContent);
-document.getElementById('status').textContent='Copied! Open Instagram and paste the message into a DM.';
-}catch(e){
-document.getElementById('status').textContent='Select and copy the message above, then paste it into Instagram DM.';
-}
-});
-</script>
+        <label for="business">Business or brand name *</label>
+        <input id="business" name="Business or brand" type="text"
+               placeholder="Your brand name" required>
+
+        <label for="service">What do you need? *</label>
+        <select id="service" name="Requested service" required>
+          <option value="">Choose a service</option>
+          <option>Logo Design</option>
+          <option>Brand Identity</option>
+          <option>Creative Design</option>
+          <option>Other</option>
+        </select>
+
+        <label for="details">Describe your idea *</label>
+        <textarea id="details" name="Project details"
+          placeholder="Tell us about your style, colors, and ideas..."
+          required></textarea>
+
+        <button class="button" type="submit">Send order ↗</button>
+        <p class="note">Please check your details before submitting.</p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    © 2026 LogoCraft Studio. All rights reserved.
+  </footer>
 </body>
 </html>
